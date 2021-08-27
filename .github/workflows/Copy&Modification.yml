@@ -17,12 +17,10 @@ jobs:
               git clone "https://github.com/shaolin-kongfu/js_scripts.git"
           - name: Modify files
             run: |
-              find "/opt/shaolin-kongfu/js_scripts/zq" -name "*.json" |xargs -I {} cp {} "/opt/shaolin-kongfu/zq/"
-              find "/opt/shaolin-kongfu/js_scripts/" -name "jc|*.json" |xargs -I {} cp {} "/opt/shaolin-kongfu/jc/"
-              cd "/opt/shaolin-kongfu/zq/"
-              ls | grep "*.json" | sed 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
-              cd "/opt/shaolin-kongfu/jc/"
-              ls | grep "*.json" | sed 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
+              find "/opt/shaolin-kongfu/js_scripts/zq" -name "*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/zq/"
+              find "/opt/shaolin-kongfu/js_scripts/" -name "*jc*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/jc/"
+              ls "/opt/shaolin-kongfu/zq/" | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
+              ls "/opt/shaolin-kongfu/jc/" | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
           - name: Send back
             run:
               cp -f "/opt/shaolin-kongfu/zq/*" "${GITHUB_WORKSPACE}/shaolin-kongfu/"
