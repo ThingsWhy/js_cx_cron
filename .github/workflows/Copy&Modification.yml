@@ -17,10 +17,8 @@ jobs:
             run: |
               find "/opt/shaolin-kongfu/js_scripts/zq" -name "*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/zq/"
               find "/opt/shaolin-kongfu/js_scripts/" -name "*jc*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/jc/"
-              sudo chmod -R +xw "/opt/shaolin-kongfu/zq"
-              sudo chmod -R +xw "/opt/shaolin-kongfu/jc"
-              ls "/opt/shaolin-kongfu/zq/" | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
-              ls "/opt/shaolin-kongfu/jc/" | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
+              ls -l "/opt/shaolin-kongfu/zq/" |awk '{print i$0}' i=`pwd`'/' | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
+              ls -l "/opt/shaolin-kongfu/jc/" |awk '{print i$0}' i=`pwd`'/' | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
           - name: Send back
             run:
               cp -f "/opt/shaolin-kongfu/zq/*" "${GITHUB_WORKSPACE}/shaolin-kongfu/"
