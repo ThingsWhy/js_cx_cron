@@ -15,10 +15,10 @@ jobs:
               sudo -E apt install -y git
           - name: Download files needed
             run: |
-              mkdir -p /opt/shaolin-kongfu/zq && mkdir -p /opt/shaolin-kongfu/jc
+              mkdir -p "/opt/shaolin-kongfu/zq" && mkdir -p "/opt/shaolin-kongfu/jc"
               sudo chmod -R +x shaolin-kongfu
               cd "/opt/shaolin-kongfu/"
-              git clone -branch main https://github.com/shaolin-kongfu/js_scripts.git
+              git clone -branch "main" "https://github.com/shaolin-kongfu/js_scripts.git"
           - name: Modify files
             run: |
               ls "/opt/shaolin-kongfu/js_scripts/zq/" | grep "*.json" | cp {} "/opt/shaolin-kongfu/zq/"
