@@ -12,12 +12,14 @@ jobs:
           - name: Download files needed
             run: |
               mkdir -p "/opt/shaolin-kongfu/zq/" && mkdir -p "/opt/shaolin-kongfu/jc/"
-              git clone "https://github.com/shaolin-kongfu/js_scripts.git" "/opt/shaolin-kongfu/js_scripts/"
               sudo chown -R runner:runner "/opt/shaolin-kongfu/"
+              git clone "https://github.com/shaolin-kongfu/js_scripts.git" "/opt/shaolin-kongfu/js_scripts/"
           - name: Modify files
             run: |
               find "/opt/shaolin-kongfu/js_scripts/zq" -name "*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/zq/"
+              ls "/opt/shaolin-kongfu/zq/"
               find "/opt/shaolin-kongfu/js_scripts/" -name "*jc*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/jc/"
+              ls "/opt/shaolin-kongfu/jc/"
               ls "/opt/shaolin-kongfu/zq/" | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
               ls "/opt/shaolin-kongfu/jc/" | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
           - name: Send back
