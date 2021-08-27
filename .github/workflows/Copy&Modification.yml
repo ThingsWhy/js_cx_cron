@@ -22,3 +22,6 @@ jobs:
           - name: Send back
             run:
               cp -f /opt/shaolin-kongfu/zq/* "${GITHUB_WORKSPACE}/shaolin-kongfu/"
+          - name: action-push
+            uses: ludeeus/action-push@0.0.1
+            
