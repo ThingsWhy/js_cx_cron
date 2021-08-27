@@ -12,15 +12,14 @@ jobs:
           - name: Download files needed
             run: |
               mkdir -p "/opt/shaolin-kongfu/zq/" && mkdir -p "/opt/shaolin-kongfu/jc/"
-              sudo chmod -R +x shaolin-kongfu
               cd "/opt/shaolin-kongfu/"
               git clone "https://github.com/shaolin-kongfu/js_scripts.git"
           - name: Modify files
             run: |
               find "/opt/shaolin-kongfu/js_scripts/zq" -name "*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/zq/"
               find "/opt/shaolin-kongfu/js_scripts/" -name "*jc*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/jc/"
-              sudo ls "/opt/shaolin-kongfu/zq/" | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
-              sudo ls "/opt/shaolin-kongfu/jc/" | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
+              ls "/opt/shaolin-kongfu/zq/" | sudo xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
+              ls "/opt/shaolin-kongfu/jc/" | sudo xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
           - name: Send back
             run:
               cp -f "/opt/shaolin-kongfu/zq/*" "${GITHUB_WORKSPACE}/shaolin-kongfu/"
