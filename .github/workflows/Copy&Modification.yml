@@ -13,7 +13,7 @@ jobs:
             run: |
               mkdir -p "/opt/shaolin-kongfu/zq/" && mkdir -p "/opt/shaolin-kongfu/jc/"
               git clone "https://github.com/shaolin-kongfu/js_scripts.git" "/opt/shaolin-kongfu/js_scripts/"
-              sudo chmod -R runner:runner "/opt/shaolin-kongfu/"
+              sudo chown -R runner:runner "/opt/shaolin-kongfu/"
           - name: Modify files
             run: |
               find "/opt/shaolin-kongfu/js_scripts/zq" -name "*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/zq/"
