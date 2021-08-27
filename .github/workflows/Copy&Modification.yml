@@ -9,13 +9,9 @@ jobs:
         steps:
           - name: Checkout repo
             uses: actions/checkout@v2
-          - name: Install dependency
-            run: |
-              sudo -E apt update -y
-              sudo -E apt install -y git
           - name: Download files needed
             run: |
-              mkdir -p "/opt/shaolin-kongfu/zq" && mkdir -p "/opt/shaolin-kongfu/jc"
+              mkdir -p "/opt/shaolin-kongfu/zq/" && mkdir -p "/opt/shaolin-kongfu/jc/"
               sudo chmod -R +x shaolin-kongfu
               cd "/opt/shaolin-kongfu/"
               git clone "https://github.com/shaolin-kongfu/js_scripts.git"
