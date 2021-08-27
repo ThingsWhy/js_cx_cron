@@ -23,7 +23,7 @@ jobs:
             run: |
               ls "/opt/shaolin-kongfu/js_scripts/zq/" | grep "*.json" | cp {} "/opt/shaolin-kongfu/zq/"
               ls "/opt/shaolin-kongfu/js_scripts/" | grep "jc|*.json" | cp {} "/opt/shaolin-kongfu/jc/"
-	      cd "/opt/shaolin-kongfu/zq/"
+              cd "/opt/shaolin-kongfu/zq/"
               ls | grep "*.json" | sed 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
               cd "/opt/shaolin-kongfu/jc/"
               ls | grep "*.json" | sed 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
