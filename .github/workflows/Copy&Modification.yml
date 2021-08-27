@@ -11,14 +11,14 @@ jobs:
             uses: actions/checkout@v2
           - name: Download files needed
             run: |
-              mkdir -p "/opt/shaolin-kongfu/zq/" && mkdir -p "/opt/shaolin-kongfu/jc/"
+              mkdir -p /opt/shaolin-kongfu/zq/ && mkdir -p /opt/shaolin-kongfu/jc/
               git clone "https://github.com/shaolin-kongfu/js_scripts.git" "/opt/shaolin-kongfu/js_scripts/"
           - name: Modify files
             run: |
-              find "/opt/shaolin-kongfu/js_scripts/zq" -name "*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/zq/"
-              find "/opt/shaolin-kongfu/js_scripts/" -name "*jc*.json" | xargs -I {} cp {} "/opt/shaolin-kongfu/jc/"
-              find "/opt/shaolin-kongfu/zq/" -type f | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
-              find "/opt/shaolin-kongfu/jc/" -type f | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
+              find /opt/shaolin-kongfu/js_scripts/zq -name "*.json" | xargs -I {} cp {} /opt/shaolin-kongfu/zq/
+              find /opt/shaolin-kongfu/js_scripts/ -name "*jc*.json" | xargs -I {} cp {} /opt/shaolin-kongfu/jc/
+              find /opt/shaolin-kongfu/zq/ -type f | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
+              find /opt/shaolin-kongfu/jc/ -type f | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
           - name: Send back
             run:
-              cp -f "/opt/shaolin-kongfu/zq/*" "${GITHUB_WORKSPACE}/shaolin-kongfu/"
+              cp -f /opt/shaolin-kongfu/zq/* "${GITHUB_WORKSPACE}/shaolin-kongfu/"
