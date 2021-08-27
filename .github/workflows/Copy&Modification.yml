@@ -29,4 +29,4 @@ jobs:
               ls | grep "*.json" | sed 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
           - name: Send back
             run:
-              cp -f "/opt/shaolin-kongfu/js_scripts/zq/*" "${GITHUB_WORKSPACE}/shaolin-kongfu/"
+              cp -f "/opt/shaolin-kongfu/zq/*" "${GITHUB_WORKSPACE}/shaolin-kongfu/"
