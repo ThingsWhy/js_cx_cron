@@ -19,15 +19,20 @@ jobs:
               find /opt/shaolin-kongfu/js_scripts/ -name "*jc*.json" | xargs -I {} cp {} /opt/shaolin-kongfu/jc/
               find /opt/shaolin-kongfu/zq/ -type f | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
               find /opt/shaolin-kongfu/jc/ -type f | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
-          - name: Send Back
+          - name: Send back
             run:
               cp -f /opt/shaolin-kongfu/zq/* "${GITHUB_WORKSPACE}/shaolin-kongfu/"
-          - name: action-push
-            # You may pin to the exact commit or the version.
-            # uses: ludeeus/action-push@0b7c1175655379c008f42bbaf524caa79cf89ec1
-            uses: ludeeus/action-push@0.0.1
+
+          - name: Commit files
+            run: |
+              git config --local user.email "1179447685@qq.com"
+              git config --local user.name "github-actions[bot]"
+              git commit -m "Add changes" -a
+          - name: Push changes
+            uses: ad-m/github-push-action@master
             with:
-              secrets: ${{ secrets.GITHUB_TOKEN }}
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              branch: ${{ github.ref }}
 
 
             
