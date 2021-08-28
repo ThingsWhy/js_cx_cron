@@ -4,7 +4,7 @@ on:
 #  schedule:
 #    - cron: 0 16 * * *
 jobs:
-    shaolin-kongfu:
+    Copy&Modification:
         runs-on: ubuntu-18.04
         steps:
           - name: Checkout repo
@@ -19,9 +19,14 @@ jobs:
               find /opt/shaolin-kongfu/js_scripts/ -name "*jc*.json" | xargs -I {} cp {} /opt/shaolin-kongfu/jc/
               find /opt/shaolin-kongfu/zq/ -type f | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
               find /opt/shaolin-kongfu/jc/ -type f | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
-          - name: Send back
+          - name: Send Back
             run:
               cp -f /opt/shaolin-kongfu/zq/* "${GITHUB_WORKSPACE}/shaolin-kongfu/"
-          - name: action-push
-            uses: ludeeus/action-push@0.0.1
+          - name: Push
+          - uses: mikeal/publish-to-github-action@master
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              BRANCH_NAME: 'main' #optional defaults to master
+
+            
             
