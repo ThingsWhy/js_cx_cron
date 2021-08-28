@@ -23,10 +23,13 @@ jobs:
             run:
               cp -f /opt/shaolin-kongfu/zq/* "${GITHUB_WORKSPACE}/shaolin-kongfu/"
           - name: Push
-          - uses: mikeal/publish-to-github-action@master
+            uses: ludeeus/action-push@0.0.1
             env:
-              GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-              BRANCH_NAME: 'main' #optional defaults to master
+              ACTION_MAIL = "1179447685@qq.com"
+              ACTION_NAME = "thingswhy"
+              ACTION_BRANCH = "main"
+              ACTION_MESSAGE = "Action commit"
+
 
             
             
