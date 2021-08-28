@@ -22,13 +22,6 @@ jobs:
           - name: Send Back
             run:
               cp -f /opt/shaolin-kongfu/zq/* "${GITHUB_WORKSPACE}/shaolin-kongfu/"
-          - name: Push
-            uses: ludeeus/action-push@0.0.1
-            env:
-              ACTION_MAIL = "1179447685@qq.com"
-              ACTION_NAME = "thingswhy"
-              ACTION_BRANCH = "main"
-              ACTION_MESSAGE = "Action commit"
 
 
             
