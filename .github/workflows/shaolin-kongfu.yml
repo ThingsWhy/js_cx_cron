@@ -4,7 +4,7 @@ on:
 #  schedule:
 #    - cron: 0 16 * * *
 jobs:
-    Copy&Modification&Push:
+    Copy_Modification_Push:
         runs-on: ubuntu-18.04
         steps:
           - name: Checkout repo
