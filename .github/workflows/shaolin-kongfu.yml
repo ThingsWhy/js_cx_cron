@@ -27,7 +27,7 @@ jobs:
           - name: Commit files
             run: |
               git config --local user.email "1179447685@qq.com"
-              git config --local user.name "Auto"
+              git config --local user.name "Automatic"
               git add .
               git commit -m "update" -a
           - name: Push changes
