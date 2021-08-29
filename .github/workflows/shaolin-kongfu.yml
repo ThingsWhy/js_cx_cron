@@ -27,7 +27,8 @@ jobs:
             run: |
               git config --local user.email "1179447685@qq.com"
               git config --local user.name "github-actions[bot]"
-              git commit -m "Add changes" -a
+              git add .
+              git commit -m "update" -a
           - name: Push changes
             uses: ad-m/github-push-action@master
             with:
