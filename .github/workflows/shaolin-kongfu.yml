@@ -21,8 +21,8 @@ jobs:
               find /opt/shaolin-kongfu/jc/ -type f | xargs -I {} sed -i 's#raw.githubusercontent.com#ghproxy.com/https://raw.githubusercontent.com#g' {}
           - name: Send back
             run:
-              cp -fr /opt/shaolin-kongfu/zq/* ${GITHUB_WORKSPACE}/shaolin-kongfu/zq/
-              cp -fr /opt/shaolin-kongfu/jc/* ${GITHUB_WORKSPACE}/shaolin-kongfu/jc/
+              sudo cp -fr /opt/shaolin-kongfu/zq/* "${GITHUB_WORKSPACE}/shaolin-kongfu/zq/"
+              sudo cp -fr /opt/shaolin-kongfu/jc/* "${GITHUB_WORKSPACE}/shaolin-kongfu/jc/"
 
           - name: Commit files
             run: |
