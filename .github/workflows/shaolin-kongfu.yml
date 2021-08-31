@@ -1,8 +1,8 @@
 name: Copy&Modification
 on: 
   workflow_dispatch:
-  schedule:
-    - cron: 0 16 * * *
+#  schedule:
+#    - cron: 0 16 * * *
 jobs:
     Copy_Modification_Push:
         runs-on: ubuntu-18.04
