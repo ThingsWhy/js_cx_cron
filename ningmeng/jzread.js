@@ -35,6 +35,10 @@ let jzreadurl= $.isNode() ? (process.env.jzreadurl ? process.env.jzreadurl : "")
 let cashtx= $.isNode() ? (process.env.cashtx ? process.env.cashtx : "") : ($.getdata('cashtx') ? $.getdata('cashtx') : "")
 let jzreadurls = ""
 const logs =0;
+
+var hours = new Date().getHours();
+var s = new Date().getMinutes();
+
 var timestamp = Math.round(new Date().getTime()/1000).toString();
 !(async () => {
   if (typeof $request !== "undefined") {
@@ -55,10 +59,10 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
           console.log(`\n开始【九章头条${$.index}】`)
 
      await benefit()
-     await share(1370611)
-     await share(1370970)
-     await share(1370968)
        await clock()
+       await share()
+       await share()
+       await share()
        await cashads()
        await info()
        await doublesign()
@@ -70,9 +74,8 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
        await doads(11)
        await doads(77)
        await getbenefit()
-       //await getreadlist()
-       //await videolist()
-       await info()
+
+       //await info()
 
 
   }
@@ -97,10 +100,10 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
           console.log(`\n开始【九章头条${$.index}】`)
 
        await benefit()
-     await share(1370611)
-     await share(1370970)
-     await share(1370968)
        await clock()
+       await share()
+       await share()
+       await share()
        await cashads()
        await info()
        await doublesign()
@@ -113,7 +116,7 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
        await doads(77)
        await getbenefit()
 
-       await info()
+      // await info()
 	        }
       }
   }
@@ -277,7 +280,11 @@ async function info(){
         if(result.code == 0)
           $.log("invite_code："+result.data['invite_code']+"\nmy coin："+result.data.integral+"\nwork_money："+result.data['work_money']+"\nmoney："+result.data.money)
     if(result.data.money>cashtx){
-        await cash()
+        $.log('现在时间为：'+hours+":"+s)
+        if(hours >= 9){
+        await cash(cashtx)
+            
+        }else {$.log("现在没到9点不能提现\n每日自动0.3")}
     }
        if(result.code != 0)
           
@@ -542,7 +549,7 @@ async function doads(id){
    })
   }
   
-  async function share(id){
+  async function share(){
  return new Promise((resolve) => {
 
    
@@ -550,7 +557,7 @@ async function doads(id){
 
     let nm = {
      url: `https://api.st615.com/v1/article/share`,
-     body:  `device=iPhone%208%20Plus&id=${id}&os=14.4&source=article&token=`+token,
+     body:  `device=iPhone%208%20Plus&id=&os=14.4&source=article&token=`+token,
             headers:{
 'Host': 'api.st615.com',
 'Content-Type':' application/x-www-form-urlencoded; charset=utf-8',
