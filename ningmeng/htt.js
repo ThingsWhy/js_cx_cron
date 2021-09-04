@@ -60,22 +60,18 @@ await ql()
       }else  {
           if (process.env.htthd && process.env.htthd.indexOf('@') > -1) {
             htthdArr = process.env.htthd.split('@');
-            httckArr = process.env.httck.split('@');
+            
             console.log(`您选择的是用"@"隔开\n`)
         } else {
             htthds = [process.env.htthd]
-            httcks = [process.env.httck]
+        
         };
         Object.keys(htthds).forEach((item) => {
         if (htthds[item]) {
             htthdArr.push(htthds[item])
         }
     })
-            Object.keys(httcks).forEach((item) => {
-        if (httcks[item]) {
-            httckArr.push(httcks[item])
-        }
-    })
+
           console.log(`共${htthdArr.length}个cookie`)
 	        for (let k = 0; k < htthdArr.length; k++) {
                 $.message = ""
@@ -110,13 +106,13 @@ $.log(decodeURIComponent  (htthd))
 
 async function ql(){
 
-await qlsign()
+await qlsign1()
 await qlxslist()
 await qlreads()
 await qllotteryinfo()
 await info()
 }
-async function qlsign(){
+async function qlsign1(){
  return new Promise((resolve) => {
 qlsign = JSON.parse(htthd)
 
@@ -490,7 +486,7 @@ qlsign = JSON.parse(htthd)
 
     let nm = {
      url: `https://api.cashtoutiao.com/frontend/credit/summary?userId=${qlsign.userId}&loginId=${qlsign.loginId}&appVersion=1043&platform=1&versionName=4.6.0`,
-     body: `{"loginId":"df3bc885272b4612ae2dc8294fb40759","versionName":"4.6.0","userId":153569637,"appVersion":1043,"platform":1}`,
+     body: `{"loginId":"${qlsign.loginId}","versionName":"4.6.0","userId":${qlsign.userId},"appVersion":1043,"platform":1}`,
      
 headers:{
     
