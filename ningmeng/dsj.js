@@ -215,7 +215,7 @@ async function info(){
          console.log(`金币：${result.data.coin}\n总金币：${result.data.totalAcquiredCoin}`)
  if(result.data.tempCoin){
    qipao = result.data.tempCoin
-   for(let i = 0;qipao.length;i++){
+   for(let i = 0;i<qipao.length;i++){
    qipaoid = qipao[i].id 
    $.log("气泡："+qipao[i].from+" 金币："+qipao[i].coin)
    await exchange(qipaoid)
@@ -395,7 +395,7 @@ async function info(){
           if(result.errCode == 0){
 
          tasklist = result.data
-         for(let i = 0; tasklist.length; i++){
+         for(let i = 0; i<tasklist.length; i++){
              taskcode = tasklist[i].code
              await dotask(taskcode)
              await $.wait(3000)
