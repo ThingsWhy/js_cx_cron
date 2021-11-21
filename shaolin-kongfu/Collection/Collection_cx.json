@@ -1,0 +1,104 @@
+{
+  "name": "elecV2P 重写订阅",
+  "author": "留个名字 elecV2",
+  "note": "xx 导出的重写规则。该订阅目前仅适用于 elecV2P。更多说明请查看: https://github.com/elecV2/elecV2P-dei/tree/master/docs/05-rewrite.md",
+  "date": "2021-11-21 23:16:27",
+  "mitmhost": [],
+  "rewrite": [
+    {
+      "match": "https://kandian.wkandian.com/v5/article/info.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqwz.js",
+      "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/v5/article/detail.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqwz.js",
+      "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/v5/user/stay.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqwz.js",
+      "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqqd.js",
+      "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/v17/NewTask/getTaskList.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_today_score.js",
+      "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/v5/nameless/adlickstart.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqkkz.js",
+      "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/v5/wechat/withdraw2.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zq_withdraw.js",
+      "enable": false
+    },
+    {
+      "match": "https://kandian.wkandian.com/v5/task/browse_start.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqllz.js",
+      "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/v5/Sousuo/playStart.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqssz.js",
+      "enable": true
+    },
+    {
+      "match": "https://ant.xunsl.com/v5/article/info.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/jcwz.js",
+      "enable": true
+    },
+    {
+      "match": "https://ant.xunsl.com/v5/article/detail.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/jcwz.js",
+      "enable": true
+    },
+    {
+      "match": "https://ant.xunsl.com/v5/nameless/adlickstart.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/jckkz.js",
+      "enable": true
+    },
+    {
+      "match": "https://ant.xunsl.com/v5/CommonReward/toGetReward.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/jcqd.js",
+      "enable": true
+    },
+    {
+      "match": "https://ant.xunsl.com/v5/user/stay.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/jcwz.js",
+      "enable": true
+    },
+    {
+      "match": "https://ant.xunsl.com/v5/wechat/withdraw2.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/jc_withdraw.js",
+      "enable": false
+    },
+    {
+      "match": "https://ant.xunsl.com/v17/NewTask/getTaskList.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/jc_today_score.js",
+      "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/V17/Ximalaya/setCompleteSec.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/ThingsWhy/js_cx_cron/main/shaolin-kongfu/zq_scripts/zq_music.js",
+      "enable": true
+    },
+    {
+      "match": "https://kandian.wkandian.com/v17/Ad/getReward.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/ThingsWhy/js_cx_cron/main/shaolin-kongfu/zq_scripts/zq_5_60.js",
+      "enable": true
+    },
+    {
+      "match": "https://ant.xunsl.com/v17/Ad/getReward.json",
+      "target": "https://ghproxy.com/https://raw.githubusercontent.com/ThingsWhy/js_cx_cron/main/shaolin-kongfu/jc_scripts/Jc_5_60.js",
+      "enable": false
+    }
+  ]
+}
