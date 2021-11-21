@@ -2,7 +2,7 @@
   "name": "elecV2P 定时任务订阅",
   "author": "留个名字",
   "note": "xx 导出的任务订阅。该订阅适用于 elecV2P，与其他软件并不兼容。相关说明参考：https://github.com/elecV2/elecV2P-dei/tree/master/docs/06-task.md",
-  "date": "2021-11-21 23:02:37",
+  "date": "2021-11-21 23:07:50",
   "list": [
     {
       "name": "中青看点5分钟60分钟任务领取",
