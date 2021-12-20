@@ -633,7 +633,7 @@ async function doads(id){
 
     let nm = {
      url: `https://api.st615.com/v1/cash/withdraw-new`,
-     body:  `token=${token}&type=1&money=0.3`,
+     body:  `token=${token}&type=1&money=${cashtx}`,
            headers:{
 'Host': 'api.st615.com',
 'Content-Type':' application/x-www-form-urlencoded; charset=utf-8',
