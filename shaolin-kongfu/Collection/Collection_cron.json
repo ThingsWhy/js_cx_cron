@@ -1,5 +1,5 @@
 {
-  "name": "zq_jc定时任务订阅",
+  "name": "zq_jc 定时任务订阅",
   "author": "留个名字",
   "note": "xx 导出的任务订阅。该订阅适用于 elecV2P，与其他软件并不兼容。相关说明参考：https://github.com/elecV2/elecV2P-dei/tree/master/docs/06-task.md",
   "date": "2021-11-21 23:14:05",
